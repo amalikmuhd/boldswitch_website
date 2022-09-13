@@ -1,6 +1,6 @@
 # Welcome to BoltSwitch!
 
-#Resources
+# Resources
 
 UI Design: [Figma Design](https://www.figma.com/file/vqIoshL36Mn1uz473JxjsS/BoldSwitch-Design?node-id=0%3A1)
 
