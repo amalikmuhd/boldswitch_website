@@ -1,0 +1,9 @@
+{
+  "bracketSpacing": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "jsxBracketSameline": false,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "trailingComma": "es5"
+}
