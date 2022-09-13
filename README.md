@@ -16,7 +16,7 @@
 
 ## Basic Rules
 
-We use hooks 100%.
+Here at BoltSwitch we are big fans of hooks 100%.
 
 ## Naming
 
