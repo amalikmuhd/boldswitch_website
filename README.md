@@ -1,58 +1,57 @@
 # Welcome to BoltSwitch!
 
+## Table of Contents
+
+1. [Basic Rules](#basic-rules)
+1. [Naming](#naming)
+1. [Declaration](#declaration)
+1. [Alignment](#alignment)
+1. [Quotes](#quotes)
+1. [Spacing](#spacing)
+1. [Props](#props)
+1. [Refs](#refs)
+1. [Parentheses](#parentheses)
+1. [Tags](#tags)
+1. [Methods](#methods)
+1. [Ordering](#ordering)
+1. [`isMounted`](#ismounted)
+
 # Basic Rules
 
 We use hooks 100%.
 
-# Naming
+## Naming
 
-Extensions: Use .jsx extension for React components. eslint: react/jsx-filename-extension
+- **Extensions**: Use `.jsx` extension for React components.
+- **Filename**: Use CamelCase for filenames. E.g., `reservationCard.jsx`.
+- **Reference Naming**: Use PascalCase for React components and camelCase for their instances. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
-Filename: Use PascalCase for filenames. E.g., ReservationCard.jsx.
+  ```jsx
+  // bad
+  import reservationCard from "./ReservationCard";
 
-Reference Naming: Use PascalCase for React components and camelCase for their instances. eslint: react/jsx-pascal-case
+  // good
+  import ReservationCard from "./reservationCard";
 
-```
-// bad
-import reservationCard from './ReservationCard';
+  // bad
+  const ReservationItem = <ReservationCard />;
 
-// good
-import ReservationCard from './ReservationCard';
+  // good
+  const reservationItem = <ReservationCard />;
+  ```
 
-// bad
-const ReservationItem = <ReservationCard />;
+- **Component Naming**: Use the filename as the component name. For example, `ReservationCard.jsx` should have a reference name of `ReservationCard`. However, for root components of a directory, use `index.jsx` as the filename and use the directory name as the component name:
 
-// good
-const reservationItem = <ReservationCard />;
+  ```jsx
+  // bad
+  import Footer from "./Footer/Footer";
 
-```
+  // bad
+  import Footer from "./Footer/index";
 
-Component Naming: Use the filename as the component name. For example, ReservationCard.jsx should have a reference name of ReservationCard. However, for root components of a directory, use index.jsx as the filename and use the directory name as the component name:
-
-```
-// bad
-import Footer from './Footer/Footer';
-
-// bad
-import Footer from './Footer/index';
-
-// good
-import Footer from './Footer';
-```
-
-And if you don’t have state or refs, prefer normal functions (not arrow functions):
-
-```
-// bad (relying on function name inference is discouraged)
-const Listing = ({ hello }) => (
-  <div>{hello}</div>
-);
-
-// good
-function Listing({ hello }) {
-  return <div>{hello}</div>;
-}
-```
+  // good
+  import Footer from "./Footer";
+  ```
 
 # Resources
 
