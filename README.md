@@ -51,22 +51,6 @@ We use hooks 100%.
   import Footer from "./Footer";
   ```
 
-  ## Declaration
-
-  - Do not use `displayName` for naming components. Instead, name the component by reference.
-
-    ```jsx
-    // bad
-    export default React.createClass({
-      displayName: 'ReservationCard',
-      // stuff goes here
-    });
-
-    // good
-    export default class ReservationCard extends React.Component {
-    }
-    ```
-
 ## Alignment
 
 - Follow these alignment styles for JSX syntax. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md) [`react/jsx-closing-tag-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md)
@@ -290,142 +274,25 @@ We don’t recommend using indexes for keys if the order of items may change.
 }
 ```
 
-- Always define explicit defaultProps for all non-required props.
-
-> Why? propTypes are a form of documentation, and providing defaultProps means the reader of your code doesn’t have to assume as much. In addition, it can mean that your code can omit certain type checks.
-
-```jsx
-// bad
-function SFC({ foo, bar, children }) {
-  return (
-    <div>
-      {foo}
-      {bar}
-      {children}
-    </div>
-  );
-}
-SFC.propTypes = {
-  foo: PropTypes.number.isRequired,
-  bar: PropTypes.string,
-  children: PropTypes.node,
-};
-
-// good
-function SFC({ foo, bar, children }) {
-  return (
-    <div>
-      {foo}
-      {bar}
-      {children}
-    </div>
-  );
-}
-SFC.propTypes = {
-  foo: PropTypes.number.isRequired,
-  bar: PropTypes.string,
-  children: PropTypes.node,
-};
-SFC.defaultProps = {
-  bar: "",
-  children: null,
-};
-```
-
-- Use spread props sparingly.
-  > Why? Otherwise you’re more likely to pass unnecessary props down to components. And for React v15.6.1 and older, you could [pass invalid HTML attributes to the DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
-
-Exceptions:
-
-- HOCs that proxy down props and hoist propTypes
-
-```jsx
-function HOC(WrappedComponent) {
-  return class Proxy extends React.Component {
-    Proxy.propTypes = {
-      text: PropTypes.string,
-      isLoading: PropTypes.bool
-    };
-
-    render() {
-      return <WrappedComponent {...this.props} />
-    }
-  }
-}
-```
-
-- Spreading objects with known, explicit props. This can be particularly useful when testing React components with Mocha’s beforeEach construct.
-
-```jsx
-export default function Foo {
-  const props = {
-    text: '',
-    isPublished: false
-  }
-
-  return (<div {...props} />);
-}
-```
-
-Notes for use:
-Filter out unnecessary props when possible. Also, use [prop-types-exact](https://www.npmjs.com/package/prop-types-exact) to help prevent bugs.
-
-```jsx
-// bad
-render() {
-  const { irrelevantProp, ...relevantProps } = this.props;
-  return <WrappedComponent {...this.props} />
-}
-
-// good
-render() {
-  const { irrelevantProp, ...relevantProps } = this.props;
-  return <WrappedComponent {...relevantProps} />
-}
-```
-
-## Refs
-
-- Always use ref callbacks. eslint: [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)
-
-  ```jsx
-  // bad
-  <Foo
-    ref="myRef"
-  />
-
-  // good
-  <Foo
-    ref={(ref) => { this.myRef = ref; }}
-  />
-  ```
-
 ## Parentheses
 
 - Wrap JSX tags in parentheses when they span more than one line. eslint: [`react/jsx-wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md)
 
   ```jsx
   // bad
-  render() {
-    return <MyComponent variant="long body" foo="bar">
-             <MyChild />
-           </MyComponent>;
-  }
+
+  return (
+    <MyComponent variant="long body" foo="bar">
+      <MyChild />
+    </MyComponent>
+  );
 
   // good
-  render() {
-    return (
-      <MyComponent variant="long body" foo="bar">
-        <MyChild />
-      </MyComponent>
-    );
-  }
-
-  // good, when single line
-  render() {
-    const body = <div>hello</div>;
-    return <MyComponent>{body}</MyComponent>;
-  }
+  return (
+    <MyComponent variant="long body" foo="bar">
+      <MyChild />
+    </MyComponent>
+  );
   ```
 
 ## Tags
