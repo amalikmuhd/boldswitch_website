@@ -24,8 +24,12 @@ const ReservationItem = <ReservationCard />;
 
 // good
 const reservationItem = <ReservationCard />;
+
+```
+
 Component Naming: Use the filename as the component name. For example, ReservationCard.jsx should have a reference name of ReservationCard. However, for root components of a directory, use index.jsx as the filename and use the directory name as the component name:
 
+```
 // bad
 import Footer from './Footer/Footer';
 
