@@ -1,5 +1,7 @@
 # Welcome to BoltSwitch!
 
+#Resources
+
 UI Design: [Figma Design](https://www.figma.com/file/vqIoshL36Mn1uz473JxjsS/BoldSwitch-Design?node-id=0%3A1)
 
 Trello Board: [Trello Board](https://trello.com/b/v3lehMSR/boldswitch)
