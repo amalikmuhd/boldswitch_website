@@ -4,11 +4,41 @@
 
 We use hooks 100%.
 
-And if you don’t have state or refs, prefer normal functions (not arrow functions) over classes:
+# Naming
+
+Extensions: Use .jsx extension for React components. eslint: react/jsx-filename-extension
+
+Filename: Use PascalCase for filenames. E.g., ReservationCard.jsx.
+
+Reference Naming: Use PascalCase for React components and camelCase for their instances. eslint: react/jsx-pascal-case
 
 ```
 // bad
+import reservationCard from './ReservationCard';
 
+// good
+import ReservationCard from './ReservationCard';
+
+// bad
+const ReservationItem = <ReservationCard />;
+
+// good
+const reservationItem = <ReservationCard />;
+Component Naming: Use the filename as the component name. For example, ReservationCard.jsx should have a reference name of ReservationCard. However, for root components of a directory, use index.jsx as the filename and use the directory name as the component name:
+
+// bad
+import Footer from './Footer/Footer';
+
+// bad
+import Footer from './Footer/index';
+
+// good
+import Footer from './Footer';
+```
+
+And if you don’t have state or refs, prefer normal functions (not arrow functions):
+
+```
 // bad (relying on function name inference is discouraged)
 const Listing = ({ hello }) => (
   <div>{hello}</div>
