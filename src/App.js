@@ -1,7 +1,8 @@
+import LandingPage from "./pages";
 import "./App.css";
 
 function App() {
-  return <h1>Welcome to boltswitch</h1>;
+  return <LandingPage />;
 }
 
 export default App;
