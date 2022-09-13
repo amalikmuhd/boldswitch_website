@@ -8,10 +8,11 @@
 1. [Quotes](#quotes)
 1. [Spacing](#spacing)
 1. [Props](#props)
-1. [Refs](#refs)
 1. [Parentheses](#parentheses)
 1. [Tags](#tags)
 1. [Methods](#methods)
+1. [Resources](#resources)
+1. [Install](#install)
 
 ## Basic Rules
 
@@ -342,13 +343,13 @@ We don’t recommend using indexes for keys if the order of items may change.
   }
   ```
 
-# Resources
+## Resources
 
 UI Design: [Figma Design](https://www.figma.com/file/vqIoshL36Mn1uz473JxjsS/BoldSwitch-Design?node-id=0%3A1)
 
 Trello Board: [Trello Board](https://trello.com/b/v3lehMSR/boldswitch)
 
-# Install
+## Install
 
 First, install [git](http://git-scm.com/downloads) and the LTS version of [node](https://nodejs.org/). Then:
 
