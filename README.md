@@ -13,8 +13,6 @@
 1. [Parentheses](#parentheses)
 1. [Tags](#tags)
 1. [Methods](#methods)
-1. [Ordering](#ordering)
-1. [`isMounted`](#ismounted)
 
 # Basic Rules
 
