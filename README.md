@@ -4,7 +4,6 @@
 
 1. [Basic Rules](#basic-rules)
 1. [Naming](#naming)
-1. [Declaration](#declaration)
 1. [Alignment](#alignment)
 1. [Quotes](#quotes)
 1. [Spacing](#spacing)
@@ -14,7 +13,7 @@
 1. [Tags](#tags)
 1. [Methods](#methods)
 
-# Basic Rules
+## Basic Rules
 
 We use hooks 100%.
 
